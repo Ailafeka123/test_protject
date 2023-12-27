@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 導入vue.js -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+
+    <!-- 建立vue的模組 -->
+   <script type="module">
+        // import { createApp } from 'vue'
+        const {createApp} = Vue
+
+        createApp({
+            // 组件选项
+            // 此处声明一些响应式状态
+            data(){
+                return{
+                pp:'QAQ'
+                // message:'Hello'
+                }
+            }
+        }).mount('#appaa')
+    </script>
+
+</head>
+<body>
+    <div id="appaa">
+        <h1>{{pp}}</h1>
+    </div>
+
+    <!-- <div id="app">{{ message }}</div> -->
+
+</body>
+</html>

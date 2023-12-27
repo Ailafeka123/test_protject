@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Verification Code</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+        #verificationCodeContainer {
+            display: flex;
+            align-items: center;
+        }
+
+        #verificationCodeImage {
+            margin-right: 10px;
+        }
+
+        #refreshButton {
+            cursor: pointer;
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        .warning{
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form action='' id="f1">
+            <div id="verificationCodeContainer">
+                <img id="verificationCodeImage" alt=" " >
+                <button type="button" id="refreshButton" onclick="generateCodeAndImage()">換新認證碼</button>
+            </div>
+            <div>
+                
+            <input type="text" name="ex" id="ex" placeholder="請輸入驗證碼" required>
+            <button type="submit" id="CK">提交</button>
+            
+            </div>
+            <div>
+                <p class="warning" id="warning">驗證碼錯誤，請重新輸入</p>
+            </div>
+            <a href="./test.html">返回</a>
+        </form>
+    </div>
+
+    <script>
+        var code = '';
+        function generateCodeAndImage() {
+            // 生成包含隨機數字和字母的六位驗證碼
+            code = '';
+            // 沒有I 和 O  和數字太相似了。
+            var characters = '0123456789ABCDEFGHJKLMNPQRSTUVWXYZ';
+            for (var i = 0; i < 6; i++) {
+                code += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+
+            // 將驗證碼轉換成圖片
+            var canvas = document.createElement('canvas');
+            canvas.width = 120;
+            canvas.height = 40;
+            var context = canvas.getContext('2d');
+            context.font = 'bold 24px Arial';
+            context.fillStyle = '#000';
+            context.fillText(code, 10, 30);
+
+            // 將圖片插入到頁面中
+            var imageContainer = document.getElementById('verificationCodeImage');
+            imageContainer.src = canvas.toDataURL('image/png');
+            // imageContainer.alt = code;
+            console.log(`本次密碼為${code}`);
+        }
+
+        // 初始頁面載入時生成一次驗證碼和圖片
+        generateCodeAndImage();
+        var f1 = document.getElementById('f1');
+        var CK = document.getElementById('CK');
+        var paw = document.getElementById('ex');
+        var warning = document.getElementById('warning');
+        f1.addEventListener('submit',function(event){
+            console.log(paw.value);
+            event.preventDefault();
+            if(paw.value!=code){
+                console.log(`${code}`);
+                console.log('輸入錯誤 阻止傳輸');
+                
+                generateCodeAndImage();
+                console.log('在度刷新驗證');
+                paw.value='';
+                console.log('清空value');
+                warning.style.display = "block";
+                console.log(' ');
+            }else{
+                console.log('true');
+                window.location.href = `./test.html?pw=${code}`;
+                
+            }})
+        
+    </script>
+</body>
+</html>
