@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en" data-bs-theme="light">
 <head>
   <meta charset="UTF-8" >
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +23,7 @@
   <!-- 頂部選單 -->
   <nav id="top_menu" class="navbar navbar-expand-lg bg-body-tertiary position-fixed w-100 " style="z-index: 9999;">
     <div class="container-fluid  ">
-      <a class="col-1 col-md-2 text-center" href="#">navbar</a>
+      <a class="col-1 col-md-2 text-center" href="#">ICON區 </a>
       <!-- 收縮按鈕 -->
       <button class="navbar-toggler col-10" type="button" data-bs-toggle="collapse" data-bs-target="#menubox"aria-controls="menubox" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -84,8 +84,8 @@
        <!-- 學歷 -->
        <div class="row p-md-3 border-bottom border-3">
         <!-- 左 -->
-        <div class="col-1 col-md-5 2" >
-          <H2 class="p-2">學歷</H2>
+        <div class="col-12 col-md-5 2 text-center" >
+          <H2 class="p-2 ">學歷</H2>
         </div>
         <!-- 右 -->
         <div class="col-12  col-md-7 text-center">
@@ -102,15 +102,23 @@
         <div class="border-3 border-end d-none d-md-block col-auto"></div>
         <div class="col-12  col-md-3 text-md-start">
           <H4 class="p-2">前端方面</H4>
-          <p>JavaScript</p>
-          <p>CSS</p>
-          <p>HTML</p>
-          <P>bootstrap</P>
+
+            <p>JavaScript</p>
+            <p>CSS</p>
+            <p>HTML</p>
+            <p>bootstrap(排版框架)</p>
+            <p>Vue.js(學習中)</p>
+          
         </div>
+
         <div class="border-3 border-end d-none d-md-block col-auto"></div>
         <div class="col-12  col-md-auto text-md-start">
           <H4 class="p-2">後端方面</H4>
-          <p>MAMP</p>
+        
+            <p>MAMP</p>
+            <p>node.js(學習中)</p>
+          
+          
         </div>
       </div>
       
@@ -121,6 +129,7 @@
           <a href="./test/test.html">驗證碼測試</a>
         </div>
       </div>
+      <div><h1>以下為拉長測試功能</h1></div>
       <div id="currentTime" style="font-size: 70px;"></div>
        <!-- 拉長測試 -->
       <div>
@@ -140,7 +149,7 @@
 
   <!-- 回到頂部的選單 -->
   <div class="dropdown position-fixed bottom-0 end-0 mb-5 me-5">
-    <a href="#" class="d-block rounded-circle p-1" style="background-color: rgba(135, 136, 137,0.5);">
+    <a href="#" class="d-block rounded-circle p-1 " style="background-color: rgba(135, 136, 137,0.5);">
       <span class="material-symbols-outlined fs-1">
         straight
       </span>
@@ -167,7 +176,7 @@
     seconds = (seconds < 10) ? "0" + seconds : seconds;
     
     // 將時間顯示在 HTML 元素中
-    document.getElementById("currentTime").innerText = hours + ":" + minutes + ":" + seconds;
+    document.getElementById("currentTime").innerText = `現在時間為:`+hours + ":" + minutes + ":" + seconds;
     
     
   }
