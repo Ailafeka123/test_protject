@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+        .center_box{
+            position: relative;
+            width: 30vw;
+            height: 30vw;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(34, 34, 34, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="center_box">
+        <div>
+            <input type="text" name="number" id="number">
+        </div>
+        <button onclick="count(number.value)">送出</button>
+        <div id="show"></div>
+    </div>
+
+    <script>
+        let number = document.getElementById('number');
+        let show = document.getElementById('show');
+        text_a = (n) => {
+            if (n == 1 || n == 2) return 1;
+            else {
+                let n1 = 1;
+                let n2 = 1;
+                let A = 0;
+                console.log(`設立變數${n1},${n2},${A}`);
+                for (let i = 2 ; i < n  ; i++){
+                    console.log(`進入迴圈,i = ${i}, n1 = ${n1}, n2 = ${n2}, A = ${A}`);
+                    A = n1+n2 ;
+                    console.log(A , n1 ,n2);
+                    n1 = n2 ;
+                    n2 = A ;
+                    console.log(n1,n2,A);
+                }
+                return A;
+            }
+        }
+
+        count = (n) => {
+            if(n > 0){
+                console.log(`輸入數值${n}`);
+                // text_a(n);
+                let mes = text_a(n)
+                // console.log(mes);
+                show.innerHTML = `${mes}`;
+            }else{
+                show.innerHTML = `輸入錯誤，請輸入正數`;
+            }
+        }
+    </script>
+</body>
+</html>

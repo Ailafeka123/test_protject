@@ -4,28 +4,30 @@
   <meta charset="UTF-8" >
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>艾拉菲卡測試網</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- <link rel="stylesheet" href="./css/bootstrap.css"> -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
   <style>
      .active {
-      /* background-color: red !important; */
       border-bottom: 2px solid #0d6efd;
     }
     .see{
       padding-top: 56px;
     }
   </style>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
-  <!-- 頂部選單 -->
-  <nav id="top_menu" class="navbar navbar-expand-lg bg-body-tertiary position-fixed w-100 " style="z-index: 9999;">
+  <!-- style="z-index: 9999;" -->
+
+<!-- 頂部選單 -->
+  <nav id="top_menu" class="navbar navbar-expand-lg bg-body-tertiary position-fixed w-100 " >
     <div class="container-fluid">
       <a class="col-1 col-md-2 text-center" href="#">ICON區 </a>
       <!-- 收縮按鈕 -->
-      <button class="navbar-toggler col-10" type="button" data-bs-toggle="collapse" data-bs-target="#menubox"aria-controls="menubox" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler col-10" type="button" data-bs-toggle="collapse" data-bs-target="#menubox"aria-controls="menubox">
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- 排版用 -->
@@ -37,7 +39,7 @@
             <a href="#myself" class="nav-link" aria-current="page" >個人資訊</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
               作品集
             </a>
             <ul class="dropdown-menu text-center">
@@ -51,17 +53,8 @@
       </div>
     </div>
   </nav>
-
-  <!-- 佔空間使用 -->
-  <!-- <nav class="navbar">
-    <div class="container-fluid ">
-      <li class="nav-item ">
-        <a href="#myself" class="nav-link" aria-current="page" >個人資訊</a>
-      </li>
-    </div>
-  </nav> -->
  
-  <main class="container text-center" style="background-color: antiquewhite;" 
+  <main class="container text-center see" style="background-color: antiquewhite;" 
     data-bs-spy="scroll" data-bs-target="#top_menu" data-bs-root-margin="0px 0px -40%" tabindex="0">
     <div class="justify-content-center">
       <!-- 個人資訊 -->
@@ -160,6 +153,13 @@
 
 
 
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 <script>
   function updateCurrentTime() {
     // 獲取當前時間
@@ -177,7 +177,6 @@
     
     // 將時間顯示在 HTML 元素中
     document.getElementById("currentTime").innerText = `現在時間為:`+hours + ":" + minutes + ":" + seconds;
-    
     
   }
 

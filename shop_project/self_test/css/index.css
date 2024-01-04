@@ -1,0 +1,141 @@
+/* 設定自己的歸零設定 */
+html,body{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: auto;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 返回置頂按鈕 固定位於右下角 */
+.return_top_button{
+    position: fixed;
+    right: 0;
+    bottom:0;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 0.5rem;
+    margin: 2rem;
+    border-radius: 50%;
+}
+/*  */
+.return_top_button:actived{
+    color: black;
+}
+
+/* 至頂選單 */
+.top_menu{
+    /* display: grid; */
+    /* grid-template-columns:auto auto auto; */
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    position: fixed;
+    z-index: 999;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    padding:  0.5rem 0 ;
+    width: 100%;
+    height: 2rem;
+    background-color: #333;
+    color:white;
+    
+}
+
+@media(min-width:768px){
+}
+@media (min-width:992px) {
+    .menu_button{
+        display: none;
+    }
+}
+@media (max-width:992px) {
+    .right_menu{
+        width: 100%;
+    }
+    .right_menu>ul{
+        display:flex;
+        flex-direction: column;
+    }
+    .right_menu>ul>li{
+        width: 100%;
+    }
+    .search{
+        display: none !important;
+    }
+}
+@media (min-width:1200px){
+
+}
+.left_menu{
+    width: 10%;
+}
+.menu_button{
+    width: 90%;
+}
+
+
+.search{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+.search>input{
+    width: 90%;
+    height: 100%;
+    padding: 0 1rem ;
+    border: 0;
+    border-radius: 2rem 0 0 2rem;
+}
+.search>button{
+    display: flex;
+    align-items: center;
+    color:#333;
+    height: 100%;
+    background-color: white;
+    border: 0;
+    border-radius:0 2rem 2rem 0;
+    padding: 0 0.5rem;
+    
+}
+.search>button:hover{
+    background-color: rgb(255, 255, 255,0.7);
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    /* flex-direction: row; */
+    /* font-size: 0; */
+}
+li{
+    display: flex;
+    /* flex-direction: row; */
+    list-style: none;
+    padding: 0.5rem 1rem ;
+    font-size: 1rem;
+}
+
+main{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    /* top:50rem; */
+}
+
+.scroll_div{
+    width: 100vw;
+}
+
+.scroll_img{
+    width: 100%;
+}
