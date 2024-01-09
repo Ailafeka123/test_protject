@@ -84,7 +84,9 @@ scroll_div.addEventListener('mouseleave',function(){
     Array.from(arrow).forEach( function(element){
         element.style.opacity= '0';
         });
-    time_scroll_start();
+        if(window.innerWidth >= 992){
+            time_scroll_start();
+        }
 });
 // 基本切換功能
 const arrow_control = function(){
@@ -118,6 +120,7 @@ function move_start(e){
     time_scroll_stop();
 };
 function move_end(e){
+
     moveX_end = e.touches[0].clientX;
     move_persent = ((moveX_end - moveX_start)/img_width )
     move_act = (move_persent - img_number)*100;
