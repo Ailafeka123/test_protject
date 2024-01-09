@@ -14,35 +14,47 @@
 
     <!-- top_menu -->
     <nav class="top_menu">
-        <!-- <div class="menu_div"> -->
-            <ul class="left_menu">
-                <li>icon區</li>
-            </ul>
-            <!-- 下單式選單按鈕 -->
-            <button class="menu_button"><span class="material-symbols-outlined">menu</span></button>
-            <!-- 其他頁面內容 -->
+        
+        <ul class="left_menu">
+            <li>icon區</li>
+        </ul>
+        <!-- 下單式選單按鈕 -->
+        <button class="menu_button" id="menu_button"><span class="material-symbols-outlined">menu</span></button>
+        <!-- 其他頁面內容 -->
 
-            <form action="./index.html" method="get" class="search">
-                <input type="text" name="s" id="search"  placeholder="請輸入要搜尋的內容">
-                <button type="submit" aria-label="搜尋"><span class="material-symbols-outlined">search</span></button>
-            </form>
+        <form action="./index.html" method="get" class="search">
+            <input type="text" name="s" id="search"  placeholder="請輸入要搜尋的內容">
+            
+            <button type="submit" aria-label="搜尋"><span class="material-symbols-outlined">search</span></button>
+        </form>
 
-            <!-- 右側 -->
-            <ul class="right_menu">
-                <li><span class="material-symbols-outlined home_button">home</span></li>
-                <li><span class="material-symbols-outlined shopping_button">shopping_cart</span></li>
-                <li><span class="material-symbols-outlined account_button">account_circle</span></li>
-            </ul>
-        <!-- </div> -->
-
-        <div>
-
-        </div>
+        <!-- 右側 -->
+        <ul class="right_menu" id="right_menu">
+            <li><a href="#" id="home_button"><span class="material-symbols-outlined icon_text">home</span><span class="icon_text">首頁</span></a></li>
+            <li><a href="#" id="shopping_button"><span class="material-symbols-outlined icon_text">shopping_cart</span><span class="icon_text">購物車</span></a></li>
+            <li><a href="#" id="account_button"><span class="material-symbols-outlined icon_text">account_circle</span><span class="icon_text">個人資訊</span></a></li>
+        </ul>
+        
     </nav>
 
     <main>
-        <div class="scroll_div">
-            <img class="scroll_img" src="https://picsum.photos/200/200"  alt="">
+        <!-- 上方的倫波 -->
+        <div class="scroll_div" id="scroll_div">
+            <div class="arrow_div">
+                <button type="button" class="arrow" id="back_arrow"><span class="material-symbols-outlined">arrow_back_ios</span></button>   
+                <button type="button" class="arrow" id="forward_arrow"><span class="material-symbols-outlined"> arrow_forward_ios</span></button>
+            </div>
+            <div class="scroll_img" id="scroll_img" >
+                <a href="#" target="_blank"><img  src="https://picsum.photos/500/200?random=2"  alt=""></a>
+                <a href="#" target="_blank"><img  src="https://picsum.photos/500/200?random=3"  alt=""></a>
+                <a href="#" target="_blank"><img  src="https://picsum.photos/500/200?random=4"  alt=""></a>
+                <a href="#" target="_blank"><img  src="https://picsum.photos/500/200?random=5"  alt=""></a>
+                <a href="#" target="_blank"><img  src="https://picsum.photos/500/200?random=6"  alt=""></a>
+            </div>
+        </div>
+        <!--  -->
+        <div  style="background-color: aquamarine;">
+
         </div>
 
 
