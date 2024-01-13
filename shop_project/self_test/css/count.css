@@ -1,0 +1,82 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-family: 'Noto Serif', serif;
+    height: 100vh;
+}
+h2{
+   margin:1rem auto; 
+   text-align: center;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+
+input{
+    padding: 0.5rem 0.5rem;
+    margin: 0;
+    width: 90%;
+    max-width: 200px;
+    font-size: 1rem; 
+    border-radius: 4px;
+    display: flex; 
+    margin: auto;
+    border: 0 solid black;
+}
+.container{
+    margin: auto;
+    display: flex;
+    position: relative;
+    width: 90%;
+    max-width: 300px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background-color: rgba(77, 77, 77,0.5);
+}
+.container_form{
+    width: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+.back{
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: auto;
+    padding: 0.5rem;
+}
+.back:hover{
+    opacity: 0.5;
+}
+
+.span_box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 200px;
+    padding: 0;
+    margin: 1rem auto;
+}
+.span_box a {
+    display: block;
+    width: 20%;
+}
+.span_box img{
+    width: 100%;
+}
+.submit_button{
+    display: flex ;
+    align-items: center;
+    justify-content: center;
+    margin:1rem auto;
+    background-color: #cbf255;
+}

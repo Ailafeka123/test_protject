@@ -61,7 +61,7 @@ const scroll_time = 5000;
 function time_scroll_start(){
     time_scroll = setInterval(function(){
         img_number = (img_number + 1) % img_total_number;
-        console.log(img_number);
+        // console.log(img_number);
         arrow_control();
     },scroll_time);
 }
@@ -84,6 +84,7 @@ scroll_div.addEventListener('mouseleave',function(){
     Array.from(arrow).forEach( function(element){
         element.style.opacity= '0';
         });
+// 非電腦的，不用再次觸發 因為會改用滑動那邊觸發 以避免同時會有兩個觸發。
         if(window.innerWidth >= 992){
             time_scroll_start();
         }
@@ -106,8 +107,8 @@ const forward_img = function(){
 
 back_arrow.addEventListener('click',back_img);
 forward_arrow.addEventListener('click',forward_img);
+// 計算倫撥div的大小
 const img_width = window.innerWidth*0.8;
-console.log(img_width);
 
 
 // 滑動功能
@@ -115,6 +116,7 @@ let moveX_start = 0;
 let moveX_end = 0;
 let move_persent = 0;
 let move_act = 0;
+
 function move_start(e){
     moveX_start = e.touches[0].clientX;
     time_scroll_stop();
@@ -130,10 +132,7 @@ function move_end(e){
     
 };
 function move_action(){
-    // const move_act = moveX_end - moveX_start;
-    console.log(`初始位置${moveX_start}`);
-    console.log(`最終位置${moveX_end}`);
-    console.log(`共移動了${move_act}`);
+
     if(move_persent > 0.2){
         back_img();
     }else if (move_persent <(-0.2)){
@@ -149,6 +148,31 @@ scroll_div.addEventListener('touchstart',move_start);
 scroll_div.addEventListener('touchmove',move_end);
 scroll_div.addEventListener('touchend',move_action);
 
+//  物品內容的item 
+const shopping_div = document.getElementById('shopping_div');
+console.log(shopping_div); 
 
+shopping_div.addEventListener('wheel',function(e){
+    let scroll_x_width = Math.round(shopping_div.scrollWidth-shopping_div.clientWidth);
+    const x_wheel = Math.max(-1,Math.min(1, (e.deltaY || -e.wheelDelta || e.detail)));
 
-// 
+    if(Math.ceil(shopping_div.scrollLeft) == scroll_x_width && x_wheel == 1){
+        // 計算有沒有到底部
+    }else if (Math.ceil(shopping_div.scrollLeft) == 0 && x_wheel == -1){
+        // 計算有沒有到頂部
+    }
+    else{
+        e.preventDefault();
+        shopping_div.scrollLeft += x_wheel *40 ;
+    };
+    // console.log(`e.deltaY = ${e.deltaY} , e.wheelDelta = ${e.wheelDelta}, e.detail = ${e.detail}`);
+    // console.log(`x_wheel = ${x_wheel}`);
+    // console.log(`shopping_div 寬度 = ${window.getComputedStyle(shopping_div).getPropertyValue('width')}`);
+    // console.log(`shopping_div scrollwidth = ${shopping_div.scrollWidth}`);
+    // console.log(`shopping_div clientWidth = ${shopping_div.clientWidth}`);
+    // console.log(`scrollwidth - clientWidth = ${ scroll_x_width}`);
+    // console.log(`scollLeft = ${Math.round(shopping_div.scrollLeft)}`)
+    // console.log(`${ Math.ceil(shopping_div.scrollLeft) == scroll_x_width }`)
+    // console.log(`shopping_div transform = ${shopping_div.scrollLeft}`);
+
+});
