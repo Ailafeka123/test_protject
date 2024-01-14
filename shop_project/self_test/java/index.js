@@ -149,9 +149,39 @@ scroll_div.addEventListener('touchmove',move_end);
 scroll_div.addEventListener('touchend',move_action);
 
 //  物品內容的item 
-const shopping_div = document.getElementById('shopping_div');
-console.log(shopping_div); 
+const con_box = document.getElementById('con_box');
+const menu = document.querySelector('[data-method = "menu"]');
+// 監聽器
+menu.addEventListener('click',function(e){
+    const menu_test = menu.querySelectorAll('.menu_test');
+    const con_box_shopping_div = con_box.querySelectorAll('.shopping_div');
+    const menu_target = e.target;
+    // console.log(menu_target);
+    console.log(menu_target);
 
+    
+    menu_test.forEach( me =>{
+         me.classList.remove('useing');
+    });
+    menu_target.classList.add('useing');
+    const e_id = menu_target.getAttribute('data-id');
+    console.log(e_id);
+    const e_shop = document.querySelector(`.shopping_div[data-id="${e_id}"]`);
+    // console.log(e_shop);
+    con_box_shopping_div.forEach(sh =>{
+        // console.log(sh);
+        sh.removeAttribute('id');
+        sh.classList.add(`d_n`);
+    });
+    e_shop.classList.remove('d_n');
+    e_shop.setAttribute('id','shopping_div');
+
+})
+
+
+
+
+const shopping_div = document.getElementById('shopping_div');
 shopping_div.addEventListener('wheel',function(e){
     let scroll_x_width = Math.round(shopping_div.scrollWidth-shopping_div.clientWidth);
     const x_wheel = Math.max(-1,Math.min(1, (e.deltaY || -e.wheelDelta || e.detail)));
@@ -165,14 +195,4 @@ shopping_div.addEventListener('wheel',function(e){
         e.preventDefault();
         shopping_div.scrollLeft += x_wheel *40 ;
     };
-    // console.log(`e.deltaY = ${e.deltaY} , e.wheelDelta = ${e.wheelDelta}, e.detail = ${e.detail}`);
-    // console.log(`x_wheel = ${x_wheel}`);
-    // console.log(`shopping_div 寬度 = ${window.getComputedStyle(shopping_div).getPropertyValue('width')}`);
-    // console.log(`shopping_div scrollwidth = ${shopping_div.scrollWidth}`);
-    // console.log(`shopping_div clientWidth = ${shopping_div.clientWidth}`);
-    // console.log(`scrollwidth - clientWidth = ${ scroll_x_width}`);
-    // console.log(`scollLeft = ${Math.round(shopping_div.scrollLeft)}`)
-    // console.log(`${ Math.ceil(shopping_div.scrollLeft) == scroll_x_width }`)
-    // console.log(`shopping_div transform = ${shopping_div.scrollLeft}`);
-
 });

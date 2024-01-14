@@ -78,5 +78,10 @@ input{
     align-items: center;
     justify-content: center;
     margin:1rem auto;
+    border-radius: 4px;
     background-color: #cbf255;
+    box-shadow: inset;
+}
+.submit_button:hover{
+    background-color: #65b822;
 }

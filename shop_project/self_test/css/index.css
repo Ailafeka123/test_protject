@@ -1,6 +1,13 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&family=Noto+Serif:wght@300&display=swap');
 
+.d_n{
+    display: none !important;
+}
+.d_f{
+    display: flex ;
+}
+
 html,body{
     margin: 0;
     padding: 0;
@@ -255,40 +262,59 @@ main{
 
 /* 以下是輪撥以下 */
 
+.shopping_menu{
+    display: block;
+
+}
+
+
 .item_div{
     display: flex;
-
+    width: 100%;
 }
 .item_div ul{
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
-    gap:2rem;
+    width: 100%;
+    margin: 0 ;
     background-color: aliceblue;
 }
+
 .item_div li{
-    background-color: aliceblue;
+    /* min-width: max(0,300px); */
+    width: 100%;
+    padding: 1rem;
+    margin: auto;
+    background-color: rgb(201, 201, 201);
+    cursor: pointer;
+}
+
+.item_div li:hover {
+    background-color: rgb(137, 137, 137);;
+}
+
+.useing {
+    background-color:rgb(232, 231, 231)  !important;
 }
 
 .shopping_div{
     display: flex;
     width: 100%;
-    margin: 2rem auto;
+    margin:  auto;
     overflow-x: scroll;
-    /* scroll-snap-type: x mandatory; */
 }
 
 .shopping_box{
-    margin: 1rem;
+    margin: 0 1rem;
     flex:20%;
-    max-height: 20%;
+    max-height: min(20%,50vh);
     display: flex;
     flex-direction: column;
     background-color: aliceblue;
     padding: 0.5rem;
-    max-height: 50vh;
     scroll-snap-align: center;
-    /* width: min(25%,100px); */
+    /* max-width: min(25%,300px); */
 }
 .shopping_box >img {
     max-height:50% ;
@@ -317,6 +343,8 @@ main{
     }
     .shopping_box{
         max-height: 100vh;
+        /* width:100%; */
+        margin: 1rem
     }
     .shopping_box >img{
         max-height:35% ;
