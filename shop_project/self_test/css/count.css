@@ -77,11 +77,21 @@ input{
     display: flex ;
     align-items: center;
     justify-content: center;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
     margin:1rem auto;
-    border-radius: 4px;
-    background-color: #cbf255;
+    border-radius: 8px;
+    background-color: #3678e9;
     box-shadow: inset;
 }
 .submit_button:hover{
-    background-color: #65b822;
+    background-color: #1d4ce5;
+}
+.warning_text{
+    text-align: start;
+    display: none;
+    color: red;
+}
+.warning_show{
+    display: flex;
 }
