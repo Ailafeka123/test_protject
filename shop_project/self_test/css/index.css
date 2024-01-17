@@ -225,6 +225,9 @@ main{
     .menu_button{
         display: none;
     }
+    .menu_search{
+        display: none !important;
+    }
     .right_menu{
         display: flex !important;
     }
