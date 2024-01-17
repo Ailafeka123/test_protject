@@ -52,6 +52,17 @@ p,h4{
     color: black;
 }
 
+.width_100{
+    width: 100% !important;
+}
+.display_flex{
+    display: flex !important;
+}
+.display_none{
+    display: none !important;
+}
+
+
 /* 至頂選單 */
 .top_menu{
     display: flex;

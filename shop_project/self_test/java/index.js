@@ -25,6 +25,45 @@ const menu_click = function (){
         });
     }
 }
+const left_menu = document.getElementById('left_menu');
+const search_menu = document.getElementById('search_menu');
+const search = document.getElementById('search');
+const search_button = document.getElementById('search_button');
+let search_method = false;
+
+// console.log(search.style.width);
+search_button.addEventListener('click',function(){
+    search_method = true;
+    // search_menu.classList.add('width_100','display_flex');
+    // left_menu.style.display='none';
+    // menu_button.style.display = 'none';
+    // right_menu.style.display = 'none';
+    left_menu.classList.add('display_none');
+    menu_button.classList.add('display_none');
+    right_menu.classList.add('display_none');
+    search_menu.classList.add('width_100','display_flex');
+    search.focus();
+});
+search.addEventListener('focus',function(){
+    if (search_method){
+        console.log('進入search_box');
+        // search_method =false;
+    };
+})
+search.addEventListener('blur',function(){
+    console.log('123');
+    if (search_method){
+        console.log('離開search_box');
+        left_menu.classList.remove('display_none');
+        menu_button.classList.remove('display_none');
+        right_menu.classList.remove('display_none');
+        search_menu.classList.remove('width_100','display_flex');
+        search_method =false;
+    }
+})
+
+
+
 // 按鈕控制
 menu_button.addEventListener('click',menu_click) ;
 // 程式
