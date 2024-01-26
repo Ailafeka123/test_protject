@@ -31,13 +31,8 @@ const search = document.getElementById('search');
 const search_button = document.getElementById('search_button');
 let search_method = false;
 
-// console.log(search.style.width);
 search_button.addEventListener('click',function(){
     search_method = true;
-    // search_menu.classList.add('width_100','display_flex');
-    // left_menu.style.display='none';
-    // menu_button.style.display = 'none';
-    // right_menu.style.display = 'none';
     left_menu.classList.add('display_none');
     menu_button.classList.add('display_none');
     right_menu.classList.add('display_none');
@@ -83,6 +78,8 @@ window.addEventListener('resize',function(){
         setTimeout( menu_click(),500);
     };
 });
+
+
 
 const scroll_div = document.getElementById('scroll_div');
 const back_arrow = document.getElementById('back_arrow');

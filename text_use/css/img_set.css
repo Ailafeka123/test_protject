@@ -1,0 +1,14 @@
+.img_width {
+    width: 100%;
+    object-position: center;
+    object-fit: cover;
+}
+.img_height{
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+}
+.img_box{
+    height:100%;
+    width:100%;
+}
