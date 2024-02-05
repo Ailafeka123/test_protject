@@ -329,7 +329,6 @@ main{
     background-color: aliceblue;
     padding: 0.5rem;
     scroll-snap-align: center;
-    /* max-width: min(25%,300px); */
 }
 .shopping_box >img {
     max-height:50% ;
@@ -351,6 +350,12 @@ main{
 .prine_div > p {
     margin:  0.5rem 0;
 }
+@media (width > 425px) {
+    .shopping_box{
+        max-width: min(25%,300px);
+    }
+}
+
 
 @media (max-width: 425px){
     .shopping_div{

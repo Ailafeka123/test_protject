@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜尋結果頁面</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./css/index.css">
+    <style>
+        .search_text{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .shopping_div{
+            overflow-x: hidden !important;
+        }
+        .filter{
+            display: flex;
+            flex-direction: row;
+            /* background-color: #5d2a2a; */
+        }
+        select{
+            /* min-width: 200px; */
+        }
+        option{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        @media (width <=425px){
+            .filter>select{
+                /* display: block; */
+                min-width: 50%;
+                min-height: 3rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- top -->
+    <nav class="top_menu">
+        
+        <ul class="left_menu" id="left_menu">
+            <li><a href="../../index.html">回履歷表</a></li>
+        </ul>
+        <!-- 下單式選單按鈕 -->
+        <button class="menu_button" id="menu_button"><span class="material-symbols-outlined">menu</span></button>
+        <!-- 其他頁面內容 -->
+
+        <form action="./search.html" method="get" class="search" id="search_menu">
+            <input type="text" name="s" id="search"  placeholder="請輸入要搜尋的內容">
+            
+            <button type="submit" aria-label="搜尋"><span class="material-symbols-outlined">search</span></button>
+        </form>
+
+        <!-- 右側 -->
+        <ul class="right_menu" id="right_menu">
+            <li><a href="#" class="menu_search"  id="search_button"><span class="material-symbols-outlined icon_text ">search</span><span class="icon_text">搜尋</span></a></li>
+            <li><a href="./index.html" id="home_button"><span class="material-symbols-outlined icon_text">home</span><span class="icon_text">首頁</span></a></li>
+            <li><a href="#" id="shopping_button"><span class="material-symbols-outlined icon_text">shopping_cart</span><span class="icon_text">購物車</span></a></li>
+            <li><a href="./count.html" id="account_button"><span class="material-symbols-outlined icon_text">account_circle</span><span class="icon_text">個人資訊</span></a></li>
+        </ul>
+        
+    </nav>
+    <main>
+        <!-- 上面搜尋結果 -->
+        <div class="search_text">
+            <p id="search_text"></p>
+            <p>共有X個結果</p>
+        </div>
+        <!-- 選單功能 -->
+        <div class="filter" >
+            <select name="frist" id="frist">
+                <option value="name">名稱</option>
+                <option value="price">價格</option>
+                <option value="time">時間</option>
+            </select>
+            <select>
+                <option value="up">最新</option>
+                <option value="down">降冪</option>
+            </select>
+        </div>
+        <div class="shopping_div " id="shopping_div">
+            <div class="shopping_box">
+                <img class="" src="https://picsum.photos/200/200?random=3"  alt="">
+                <h4>1號商品</h4>
+                <p>產品說明:</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni minus repellat quidem quae. Ad cupiditate quaerat, numquam ipsam nesciunt corporis eum, similique saepe quia unde totam odio esse ab fugiat!</p>
+                <div class="prine_div">
+                    <p>評價:5.6</p>
+                    <p>價格:526</p>
+                </div>
+            </div>
+            <div class="shopping_box">
+                <img class="" src="https://picsum.photos/200/200?random=1"  alt="">
+                <h4>2號商品</h4>
+                <p>產品說明:</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni minus repellat quidem quae. Ad cupiditate quaerat, numquam ipsam nesciunt corporis eum, similique saepe quia unde totam odio esse ab fugiat!</p>
+                <div class="prine_div">
+                    <p>評價:5.6</p>
+                    <p>價格:526</p>
+                </div>
+            </div>
+            <div class="shopping_box">
+                <img class="" src="https://picsum.photos/200/200?random=8"  alt="">
+                <h4>3號商品</h4>
+                <p>產品說明:</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni minus repellat quidem quae. Ad cupiditate quaerat, numquam ipsam nesciunt corporis eum, similique saepe quia unde totam odio esse ab fugiat!</p>
+                <div class="prine_div">
+                    <p>評價:5.6</p>
+                    <p>價格:526</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script>
+        // var URL_ss = window.location.href;
+        // console.log(URL_ss);
+        var params = new URLSearchParams(window.location.search);
+        var params_s = params.get('s');
+        console.log(params_s);
+        var search_box = document.getElementById('search');
+        var search_text = document.getElementById('search_text');
+        search_box.value = params_s;
+        search_text.innerText =`當前搜尋【${params_s}】`;
+    </script>
+    <script src="./java/top_menu.js"></script>
+</body>
+</html>
