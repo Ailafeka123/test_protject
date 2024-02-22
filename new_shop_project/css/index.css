@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root{
+    --text_style:"Open Sans", sans-serif;
+    --text_style_cn:"Noto Sans TC", sans-serif;
+    --text_size:1rem;
+    --bgc_1:rgb(23, 19, 19);
+    --bgc_2:rgb(42, 38, 38);
+    --bgc_3:rgb(70, 64, 64);
+    --bgc_4:rgb(132, 224, 238);
+    --bgc_5:rgb(96, 183, 197);
+    --bgc_6:rgb(75, 191, 209);
+}
+html,body{
+    font-size: var(--text_size);
+    font-family: var(--text_style);
+    font-family: var(--text_style_cn);
+    padding: 0;
+    margin: 0;
+}
+nav{
+    height: 20px;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+}
+div{
+    width: 20px;
+}
+.b1{
+    background-color: var(--bgc_1);
+}
+.b2{
+    background-color: var(--bgc_2);
+}
+.b3{
+    background-color: var(--bgc_3);
+}
+.b4{
+    background-color: var(--bgc_4);
+}
+.b5{
+    background-color: var(--bgc_5);
+}
+.b6{
+    background-color: var(--bgc_6);
+}

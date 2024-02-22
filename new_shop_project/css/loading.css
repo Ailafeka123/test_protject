@@ -1,0 +1,54 @@
+:root{
+    --circle_size: min(30vw, 50px);
+    --loading_color:#925b31;
+}
+loading{
+    padding: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: #d47f3e;
+    width: 100vw;
+    height: 100vh;
+}
+.loading_div{
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+}
+
+.loading_div button{
+    /* display: flex; */
+    margin: 0 auto;
+}
+
+.circle_icon{
+    margin: auto;
+    display: flex;
+    width: var(--circle_size);
+    height: var(--circle_size);
+    border: 1rem solid #925b31;
+    border-radius: 50%;
+}
+.loading_icon{
+    margin: auto;
+    display: flex;
+    width: var(--circle_size);
+    height: var(--circle_size);
+    background-color: var(--loading_color);
+    transform: rotate(45deg);
+    animation: loading_animation 1s ease-in infinite;
+}
+@keyframes loading_animation{
+    0%{
+        transform: rotate(45deg);
+    }
+    50%{
+        transform:rotate(90deg);
+
+    }
+    100%{
+        transform: rotate(135deg);
+    }
+}
