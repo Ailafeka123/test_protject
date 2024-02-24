@@ -1,0 +1,7 @@
+.scroll_width{
+    max-width: 80vw !important;
+}
+.scroll_box{
+   display: flex;
+   flex-direction: row;
+}

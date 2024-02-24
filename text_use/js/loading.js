@@ -4,7 +4,6 @@ window.addEventListener('load', function() {
     loading_screen.style.opacity = 0;
 });
 loading_screen.addEventListener('transitionend',function(){
-    console.log('執行display = none')
     loading_screen.style.display = 'none';
 })
 

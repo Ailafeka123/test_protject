@@ -22,6 +22,12 @@
     animation: spin 1s linear infinite;
   }
   
+  .loading_text{
+    font-size: 2rem;
+    font-weight: 900;
+    color: #3498db;
+  }
+
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }

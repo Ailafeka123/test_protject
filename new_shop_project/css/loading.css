@@ -1,10 +1,12 @@
 :root{
     --circle_size: min(30vw, 50px);
     --loading_color:#925b31;
+    --small_icon_size: calc(var(--circle_size)/3);
 }
 loading{
-    padding: auto;
+    /* padding: auto; */
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     position: absolute;
@@ -15,6 +17,7 @@ loading{
 .loading_div{
     display: flex;
     flex-direction: column;
+    position: relative;
     width: 50vw;
 }
 
@@ -37,18 +40,30 @@ loading{
     width: var(--circle_size);
     height: var(--circle_size);
     background-color: var(--loading_color);
-    transform: rotate(45deg);
     animation: loading_animation 1s ease-in infinite;
 }
 @keyframes loading_animation{
     0%{
-        transform: rotate(45deg);
-    }
-    50%{
-        transform:rotate(90deg);
-
+        transform: rotate(0deg);
     }
     100%{
-        transform: rotate(135deg);
+        transform: rotate(90deg);
+    }
+}
+.loading_small_affect{
+    display: flex;
+    position: absolute;
+    background-color: #fff;
+    background-color: var(--loading_color);
+    width: var(--small_icon_size);
+    height: var(--small_icon_size);
+    margin: auto;
+    top: calc(50% + var(--circle_size)/2);
+    left: calc(50% - var(--circle_size)/2);
+    animation: loading_small_affect_animation 1s linear infinite;
+}
+@keyframes loading_small_affect_animation{
+    0%{
+
     }
 }

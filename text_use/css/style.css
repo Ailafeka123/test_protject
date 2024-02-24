@@ -243,6 +243,11 @@ main{
     align-items: center;
     justify-content: center;
 }
+.flex_col{
+    display: flex;
+    flex-direction: column;
+    
+}
 .img_div{
     max-height: 50vh;
     overflow: hidden;
@@ -257,7 +262,7 @@ main{
     }
     .text_div{
         flex-direction: column;
-        gap:0.25rem;
+        gap:1rem;
     }
     .flex_1{
         flex: auto;
@@ -268,6 +273,15 @@ main{
     .text_contain{
         order: 2;
     }
+}
+.img_3{
+    overflow: hidden;
+    max-height: 80%;
+    width: 100%;
+}
+.img_3_text{
+    /* overflow: hidden; */
+    /* height: 20%; */
 }
 
 footer{

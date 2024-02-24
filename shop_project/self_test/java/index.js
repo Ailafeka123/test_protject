@@ -192,8 +192,6 @@ menu.addEventListener('click',function(e){
     const menu_test = menu.querySelectorAll('.menu_test');
     const con_box_shopping_div = con_box.querySelectorAll('.shopping_div');
     const menu_target = e.target;
-    // console.log(menu_target);
-    console.log(menu_target);
 
     
     menu_test.forEach( me =>{
